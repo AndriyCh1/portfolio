@@ -18,16 +18,8 @@ function PageTransitions() {
   // Sections Active class
   sectBtn.forEach(btn => {
     btn.addEventListener('click', e => {
-      const id = e.target.dataset.id;
+      const id = btn.dataset.id;
 
-      // if (id) {
-      //   // remove selected from the other btns
-      //   sectBtns.forEach(btn => {
-      //     btn.classList.remove('active')
-      //   })
-      //   e.target.classList.add('active')
-      // }
-      
       // hide other sections
       sections.forEach(section => {
         section.classList.remove('active');
@@ -37,9 +29,13 @@ function PageTransitions() {
       if (element) {
         element.classList.add('active');
       }
-    }, true)
+    })
   })
 }
+
+document.querySelector(".theme-btn").addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+})
 
 PageTransitions();
 
